@@ -31,12 +31,13 @@ def init_given_table(array):
         if len(user_input) == 2:
             x, y = map(int, user_input)
             # Checks if the input is a valid number from 1 - 5
-            if x < 6 and x > 0 and y < 6 and y > 0 and array[x-1][y-1] == 0:
-                addnum(x, y, array, n)
-                output_table(array)
-                n += 1
-            elif array[x-1][y-1] != 0: 
-                print("Please only input on empty fields")
+            if x <= 5 and x >= 1 and y <= 5 and y >= 1:
+                if array[x-1][y-1] == 0:
+                    addnum(x, y, array, n)
+                    output_table(array)
+                    n += 1
+                else:
+                    print("Please only input on empty fields")
             else:
                 print("Please only input valid numbers (1-5)")
         else:
